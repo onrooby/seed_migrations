@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Dustin Eversmann', 'onrooby GmbH']
   s.email       = ['admin@onrooby.com']
   s.homepage    = ''
-  s.summary     = 'Extension of seed behaviour'
+  s.summary     = 'Extension of seed behaviour for rails applications'
   s.description = 'Handle seeding like migrating'
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]

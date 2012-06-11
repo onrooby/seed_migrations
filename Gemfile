@@ -13,5 +13,9 @@ gem "jquery-rails"
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
+group :test do
+  gem 'simplecov', :require => false
+end
+
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'

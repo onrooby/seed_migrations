@@ -1,7 +1,7 @@
 Welcome to SeedMigrations
 =========================
 
-SeedMigrations is an extension to make seeding behave like migrating.
+SeedMigrations is an extension for Ruby on Rails to make seeding behave like migrating.
 
 Seeds are stored in db/seed and follow the naming convention of migrations (e.g. db/seed/20110630710959\_add\_bananas.rb).
 
@@ -20,9 +20,11 @@ Just add the gem to your Gemfile and:
 Usage
 -----
 
-To **create a seed** use the seed generator (**rails generate seed <name>**) and write your code in its method named 'up'.
+**Create a seed**
+To create a seed use the seed generator (**rails generate seed <name>**) and write your code in its method named 'up'.
 
-To **load new seeds** use the rake task **db:seed**.    
+**Load new seeds**
+To load new seeds use the rake task **db:seed**.    
 A seed will be performed if there is no entry in the database table named seed\_migrations with the name of the seed (without ending).    
 After successful performance an entry is created.    
 Seeds are executed within a transaction (so if an exception occurs, the changes made by the seed are rolled back).    
@@ -31,6 +33,7 @@ Seeds are executed within a transaction (so if an exception occurs, the changes 
 **Migrating from old behaviour**    
 If you used the default seeding behaviour but want your code to be executed just once, move it to an initial seed and keep db/seed.rb empty.
 
+**Reload the last seed**
 To **reload the last successfully performed seed** use the rake task **db:seed:last**. This seed will be performed even if it was performed before.
 
 This project rocks and uses MIT-LICENSE.

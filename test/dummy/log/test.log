@@ -497,3 +497,84 @@ Connecting to database specified by database.yml
   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "plants" [0m
   [1m[35m (0.7ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "plants" 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "seed_migrations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("seed_migrations")[0m
+  [1m[35m (0.4ms)[0m  CREATE UNIQUE INDEX "index_seed_migrations_on_name" ON "seed_migrations" ("name")
+  [1m[36mActiveRecord::SeedMigration Load (0.3ms)[0m  [1mSELECT "seed_migrations".* FROM "seed_migrations" WHERE "seed_migrations"."name" = '20120604133720_add_plant' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "plants" VALUES(NULL)[0m
+  [1m[35mSQL (57.3ms)[0m  INSERT INTO "seed_migrations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Mon, 11 Jun 2012 10:35:24 UTC +00:00], ["name", "20120604133720_add_plant"], ["updated_at", Mon, 11 Jun 2012 10:35:24 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mActiveRecord::SeedMigration Load (0.1ms)[0m  SELECT "seed_migrations".* FROM "seed_migrations" WHERE "seed_migrations"."name" = '20120604133721_add_one_more_plant' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "plants" VALUES(NULL)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "seed_migrations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Mon, 11 Jun 2012 10:35:24 UTC +00:00], ["name", "20120604133721_add_one_more_plant"], ["updated_at", Mon, 11 Jun 2012 10:35:24 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mActiveRecord::SeedMigration Load (0.1ms)[0m  [1mSELECT "seed_migrations".* FROM "seed_migrations" WHERE "seed_migrations"."name" = '20120604133722_add_one_more_plant_failing' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "plants" VALUES(NULL)[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "plants" [0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "plants" 
+  [1m[36mActiveRecord::SeedMigration Load (0.1ms)[0m  [1mSELECT "seed_migrations".* FROM "seed_migrations" WHERE "seed_migrations"."name" = '20120604133720_add_plant' LIMIT 1[0m
+  [1m[35mActiveRecord::SeedMigration Load (0.1ms)[0m  SELECT "seed_migrations".* FROM "seed_migrations" WHERE "seed_migrations"."name" = '20120604133721_add_one_more_plant' LIMIT 1
+  [1m[36mActiveRecord::SeedMigration Load (0.1ms)[0m  [1mSELECT "seed_migrations".* FROM "seed_migrations" WHERE "seed_migrations"."name" = '20120604133722_add_one_more_plant_failing' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "plants" VALUES(NULL)[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "plants" [0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "plants" 
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "seed_migrations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("seed_migrations")
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_seed_migrations_on_name" ON "seed_migrations" ("name")[0m
+  [1m[35mActiveRecord::SeedMigration Load (0.1ms)[0m  SELECT "seed_migrations".* FROM "seed_migrations" WHERE "seed_migrations"."name" = '20120604133720_add_plant' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "plants" VALUES(NULL)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "seed_migrations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Mon, 11 Jun 2012 10:35:24 UTC +00:00], ["name", "20120604133720_add_plant"], ["updated_at", Mon, 11 Jun 2012 10:35:24 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mActiveRecord::SeedMigration Load (0.1ms)[0m  [1mSELECT "seed_migrations".* FROM "seed_migrations" WHERE "seed_migrations"."name" = '20120604133721_add_one_more_plant' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "plants" VALUES(NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "seed_migrations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Mon, 11 Jun 2012 10:35:24 UTC +00:00], ["name", "20120604133721_add_one_more_plant"], ["updated_at", Mon, 11 Jun 2012 10:35:24 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mActiveRecord::SeedMigration Load (0.1ms)[0m  SELECT "seed_migrations".* FROM "seed_migrations" WHERE "seed_migrations"."name" = '20120604133722_add_one_more_plant_failing' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "plants" VALUES(NULL)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "plants" 
+  [1m[36m (10.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "plants" [0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "seed_migrations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mPRAGMA index_list("seed_migrations")[0m
+  [1m[35m (0.4ms)[0m  CREATE UNIQUE INDEX "index_seed_migrations_on_name" ON "seed_migrations" ("name")
+  [1m[36mActiveRecord::SeedMigration Load (0.2ms)[0m  [1mSELECT "seed_migrations".* FROM "seed_migrations" WHERE "seed_migrations"."name" = '20120604133720_add_plant' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "plants" VALUES(NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "seed_migrations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Mon, 11 Jun 2012 10:35:24 UTC +00:00], ["name", "20120604133720_add_plant"], ["updated_at", Mon, 11 Jun 2012 10:35:24 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mActiveRecord::SeedMigration Load (0.1ms)[0m  SELECT "seed_migrations".* FROM "seed_migrations" WHERE "seed_migrations"."name" = '20120604133721_add_one_more_plant' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "plants" VALUES(NULL)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "seed_migrations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Mon, 11 Jun 2012 10:35:24 UTC +00:00], ["name", "20120604133721_add_one_more_plant"], ["updated_at", Mon, 11 Jun 2012 10:35:24 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mActiveRecord::SeedMigration Load (0.1ms)[0m  [1mSELECT "seed_migrations".* FROM "seed_migrations" WHERE "seed_migrations"."name" = '20120604133722_add_one_more_plant_failing' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "plants" VALUES(NULL)[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "plants" [0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "plants" 
+  [1m[36mActiveRecord::SeedMigration Load (0.2ms)[0m  [1mSELECT "seed_migrations".* FROM "seed_migrations" ORDER BY "seed_migrations"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "plants" VALUES(NULL)[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "plants" [0m
+  [1m[35m (0.7ms)[0m  rollback transaction
