@@ -1,4 +1,4 @@
-class <%= file_name.camelize %> < ActiveRecord::Seed
+class <%= file_name.camelize %> < ActiveRecord::SeedMigration
   
   def self.up
   
