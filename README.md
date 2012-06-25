@@ -21,7 +21,7 @@ Usage
 -----
 
 **Create a seed**    
-To create a seed use the seed generator (**rails generate seed <name>**) and write your code in its method named 'up'.
+To create a seed use the seed generator (**rails g seed_migration <name>**) and write your code in its method named 'up'.
 
 **Load new seeds**    
 To load new seeds use the rake task **db:seed**.    
