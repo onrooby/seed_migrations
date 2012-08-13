@@ -5,7 +5,7 @@ require "seed_migrations/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.date        = '2012-08-10
+  s.date        = '2012-08-13'
   s.name        = "seed_migrations"
   s.version     = SeedMigrations::VERSION
   s.authors     = ['Dustin Eversmann', 'onrooby GmbH']
