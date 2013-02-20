@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/seed_migrations.png)](http://badge.fury.io/rb/seed_migrations)
+
 Welcome to SeedMigrations
 =========================
 
