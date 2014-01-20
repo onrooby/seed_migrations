@@ -1,2 +1,6 @@
 coverage
 vendor/bundle
+tmp
+.bundle
+.ruby-version
+test/dummy/log
