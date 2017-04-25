@@ -46,7 +46,7 @@ class ActiveRecord::SeedMigration < ActiveRecord::Base
   private 
   
   def self.ensure_table_is_set
-    create_seed_migrations_table unless ActiveRecord::Migration.table_exists?("seed_migrations")
+    create_seed_migrations_table unless ActiveRecord::Migration.data_source_exists?("seed_migrations")
   end
   
   def self.create_seed_migrations_table
