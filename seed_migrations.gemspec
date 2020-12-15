@@ -5,7 +5,7 @@ require "seed_migrations/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.date        = '2019-08-19'
+  s.date        = '2020-12-15'
   s.name        = "seed_migrations"
   s.version     = SeedMigrations::VERSION
   s.authors     = ['Dustin Eversmann', 'onrooby GmbH']
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_runtime_dependency 'rails', '>= 6.0.0', '< 6.1'
+  s.add_runtime_dependency 'rails', '>= 6.0.0', '< 6.2'
 
   s.add_development_dependency 'sqlite3', '~> 0'
 end
