@@ -1,4 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/seed_migrations.png)](http://badge.fury.io/rb/seed_migrations)
+[![build](https://github.com/onrooby/seed_migrations/actions/workflows/build.yml/badge.svg)](https://github.com/onrooby/seed_migrations/actions/workflows/build.yml)
 
 Welcome to SeedMigrations
 =========================
